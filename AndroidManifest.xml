@@ -193,7 +193,7 @@
         </service>
 
         <!-- Settings activity for screensaver -->
-        <activity android:name=".ScreensaverSettingsActivity"
+        <activity android:name="ScreensaverSettingsActivity"
                 android:label="@string/screensaver_settings"
                 android:theme="@android:style/Theme.Holo"
                 android:taskAffinity=""
