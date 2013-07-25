@@ -206,6 +206,7 @@ public class DigitalWidgetViewsFactory extends BroadcastReceiver implements Remo
         }
         if (mReloadCitiesDb) {
             mAdapter.loadCitiesDb(mContext);
+            mAdapter.updateHomeLabel(mContext);
             mReloadCitiesDb = false;
         }
 
@@ -285,8 +286,10 @@ public class DigitalWidgetViewsFactory extends BroadcastReceiver implements Remo
             widget.setTextViewText(R.id.nextAlarm,
                     c.getString(R.string.control_set_alarm_with_existing, nextAlarm));
             widget.setViewVisibility(R.id.nextAlarm, View.VISIBLE);
+            Log.v(TAG, "DigitalWidget sets next alarm string to " + nextAlarm);
         } else  {
             widget.setViewVisibility(R.id.nextAlarm, View.GONE);
+            Log.v(TAG, "DigitalWidget sets next alarm string to null");
         }
     }
 }
